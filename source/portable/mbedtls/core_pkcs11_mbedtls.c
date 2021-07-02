@@ -2585,12 +2585,12 @@ CK_DECLARE_FUNCTION( CK_RV, C_DestroyObject )( CK_SESSION_HANDLE hSession,
         }
         else
         {
-            LogError( ( "Failed to destroy object. PKCS11_PAL_DestroyObject failed." ) );
+            LogError( ( "Failed to destroy object. PKCS11_PAL_DestroyObject failed with: (0x%0lX)", xResult ) );
         }
     }
     else
     {
-        LogError( ( "Failed to destroy object. The session was invalid." ) );
+        LogError( ( "Failed to destroy object. The session was invalid.") );
     }
 
     return xResult;
